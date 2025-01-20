@@ -9,7 +9,6 @@ export function useInterval(callback, delay) {
   }, [callback]);
 
   // Set up the interval.
-  // kjdfhsaldkfhsdlkfhsdk
   useEffect(() => {
     function tick() {
       savedCallback.current();
