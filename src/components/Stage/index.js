@@ -4,7 +4,6 @@ import Switch from "react-switch";
 
 import useWindowDimensions from "../../hooks/useWindowDimensions";
 import background from "../../images/background.jpg";
-import StatusRow from "../StatusRow";
 import LoseGame from '../LoseGame';
 
 import Color from "color";
@@ -129,20 +128,6 @@ const ContainerSwitch = styled.div`
 		flex-direction: column;
 		justify-content: flex-end;
 	`};
-`;
-
-const ContainerStatus = styled.div`
-	width: ${props => props.pixelSize * 8}px;
-	${props =>
-		!props.portrait && `height: ${props.pixelSize * 18 + (18 / 3) * 1}px;`}
-	${props => props.portrait && `width: ${props.pixelSize * 10 + (10 / 3) * 1}px;`}
-	margin-left: ${props => (props.portrait ? 0 : props.pixelSize / 3)}px;
-	margin-top: ${props => (props.portrait ? props.pixelSize / 3 : 0)}px;
-	display: flex;
-	flex-direction: ${props => (props.portrait ? "row" : "column")};
-	align-items: center;
-	justify-content: ${props => (props.portrait ? "space-between" : "flex-start")};
-	font-size: ${props => props.pixelSize}px;
 `;
 
 const getRenderizacaoBloco = bloco => {
