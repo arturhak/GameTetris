@@ -310,37 +310,6 @@ const Stage = ({ lose, keyOnLeft, keyOnRight, keyOnRotate, keyOnDown, restartCli
 					<button className="left-button" onClick={keyOnDown}>speed down</button>
 				</div>
 
-				{/*{status && (*/}
-				{/*	<ContainerStatus portrait={portrait} pixelSize={pixelSize}>*/}
-				{/*		<StatusRow*/}
-				{/*			backgroundColor={theme3d ? "#444" : "black"}*/}
-				{/*			portrait={portrait}*/}
-				{/*			borderSize={pixelSize / 10}*/}
-				{/*			margin={pixelSize / 3}*/}
-				{/*			padding={pixelSize / 2}*/}
-				{/*			title="SCORE"*/}
-				{/*			value={status.score}*/}
-				{/*		/>*/}
-				{/*		<StatusRow*/}
-				{/*			backgroundColor={theme3d ? "#444" : "black"}*/}
-				{/*			portrait={portrait}*/}
-				{/*			borderSize={pixelSize / 10}*/}
-				{/*			margin={pixelSize / 3}*/}
-				{/*			padding={pixelSize / 2}*/}
-				{/*			title="LEVEL"*/}
-				{/*			value={status.level}*/}
-				{/*		/>*/}
-				{/*		<StatusRow*/}
-				{/*			backgroundColor={theme3d ? "#444" : "black"}*/}
-				{/*			portrait={portrait}*/}
-				{/*			borderSize={pixelSize / 10}*/}
-				{/*			margin={pixelSize / 3}*/}
-				{/*			padding={pixelSize / 2}*/}
-				{/*			title="LINES"*/}
-				{/*			value={status.lines}*/}
-				{/*		/>*/}
-				{/*	</ContainerStatus>*/}
-				{/*)}*/}
 			</Game>
 			{ lose && 
 				<LoseGame portrait={portrait} restartClick={restartClick} status={status} pixelSize={pixelSize} theme3d={theme3d}>
