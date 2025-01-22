@@ -167,7 +167,7 @@ const getRenderizacaoBloco = bloco => {
 	return trimBloco;
 };
 
-const Stage = ({ lose, restartClick, map, player, hint, status, paused, ...others }) => {
+const Stage = ({ lose, keyOnLeft, keyOnRight, keyOnRotate, keyOnDown, restartClick, map, player, hint, status, paused, ...others }) => {
 	const [pixelSize, setPixelSize] = useState(30);
 	const [portrait, setPortrait] = useState(false);
 	const { width, height } = useWindowDimensions();
@@ -301,37 +301,46 @@ const Stage = ({ lose, restartClick, map, player, hint, status, paused, ...other
 						))}
 					</StyledStage>
 				)}
-				{status && (
-					<ContainerStatus portrait={portrait} pixelSize={pixelSize}>
-						<StatusRow
-							backgroundColor={theme3d ? "#444" : "black"}
-							portrait={portrait}
-							borderSize={pixelSize / 10}
-							margin={pixelSize / 3}
-							padding={pixelSize / 2}
-							title="SCORE"
-							value={status.score}
-						/>
-						<StatusRow
-							backgroundColor={theme3d ? "#444" : "black"}
-							portrait={portrait}
-							borderSize={pixelSize / 10}
-							margin={pixelSize / 3}
-							padding={pixelSize / 2}
-							title="LEVEL"
-							value={status.level}
-						/>
-						<StatusRow
-							backgroundColor={theme3d ? "#444" : "black"}
-							portrait={portrait}
-							borderSize={pixelSize / 10}
-							margin={pixelSize / 3}
-							padding={pixelSize / 2}
-							title="LINES"
-							value={status.lines}
-						/>
-					</ContainerStatus>
-				)}
+				<div className="buttons-group">
+					<button className="rotate-button" onClick={keyOnRotate}>rotate</button>
+					<div>
+						<button className="left-button" onClick={keyOnLeft}>left</button>
+						<button className="left-button" onClick={keyOnRight}>right</button>
+					</div>
+					<button className="left-button" onClick={keyOnDown}>speed down</button>
+				</div>
+
+				{/*{status && (*/}
+				{/*	<ContainerStatus portrait={portrait} pixelSize={pixelSize}>*/}
+				{/*		<StatusRow*/}
+				{/*			backgroundColor={theme3d ? "#444" : "black"}*/}
+				{/*			portrait={portrait}*/}
+				{/*			borderSize={pixelSize / 10}*/}
+				{/*			margin={pixelSize / 3}*/}
+				{/*			padding={pixelSize / 2}*/}
+				{/*			title="SCORE"*/}
+				{/*			value={status.score}*/}
+				{/*		/>*/}
+				{/*		<StatusRow*/}
+				{/*			backgroundColor={theme3d ? "#444" : "black"}*/}
+				{/*			portrait={portrait}*/}
+				{/*			borderSize={pixelSize / 10}*/}
+				{/*			margin={pixelSize / 3}*/}
+				{/*			padding={pixelSize / 2}*/}
+				{/*			title="LEVEL"*/}
+				{/*			value={status.level}*/}
+				{/*		/>*/}
+				{/*		<StatusRow*/}
+				{/*			backgroundColor={theme3d ? "#444" : "black"}*/}
+				{/*			portrait={portrait}*/}
+				{/*			borderSize={pixelSize / 10}*/}
+				{/*			margin={pixelSize / 3}*/}
+				{/*			padding={pixelSize / 2}*/}
+				{/*			title="LINES"*/}
+				{/*			value={status.lines}*/}
+				{/*		/>*/}
+				{/*	</ContainerStatus>*/}
+				{/*)}*/}
 			</Game>
 			{ lose && 
 				<LoseGame portrait={portrait} restartClick={restartClick} status={status} pixelSize={pixelSize} theme3d={theme3d}>

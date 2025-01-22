@@ -203,6 +203,8 @@ const Game = () => {
 	};
 
 	const keyDown = ({ keyCode }) => {
+		console.log("keyCode",keyCode)
+
 		if (pause || gameOver)
 			return;
 		switch (keyCode) {
@@ -229,6 +231,33 @@ const Game = () => {
 				break;
 		}
 	};
+
+	const keyLeft = ({ keyCode }) => {
+		console.log("keyCode",keyCode)
+		setDown(false);
+
+		setPlayer(player => ({ ...player, pos: getNewPlayerPos("left") }));
+
+	}
+	const keyRight = ({ keyCode }) => {
+		console.log("keyCode",keyCode)
+		setDown(false);
+
+		setPlayer(player => ({ ...player, pos: getNewPlayerPos("right") }));
+
+	}
+	const keyRotate = ({ keyCode }) => {
+		console.log("keyCode",keyCode)
+		setDown(false);
+		rotatePlayer();
+	}
+	const keyOnDown = ({ keyCode }) => {
+		console.log("keyCode",keyCode)
+
+		setTick(Date.now());
+		setDown(true);
+	}
+
 
 	const checkMap = React.useCallback(
 		map => {
@@ -357,6 +386,7 @@ const Game = () => {
 			</Center>
 		);
 	return (
+
 		<Stage
 			lose={gameOver}
 			restartClick={() => restartGame()}
@@ -365,13 +395,17 @@ const Game = () => {
 			hint={hintPlayer}
 			paused={pause}
 			status={{ lines, score, level }}
-			onBlur={() => setPause(true)}
+			// onBlur={() => setPause(true)}
 			onFocus={() => setPause(false)}
 			tabIndex="0"
 			onKeyUp={keyUp}
 			onKeyDown={keyDown}
 			onClick={() => rotatePlayer()}
 			{...bind()}
+			keyOnLeft={keyLeft}
+			keyOnRight={keyRight}
+			keyOnRotate={keyRotate}
+			keyOnDown={keyOnDown}
 		/>
 	);
 };
