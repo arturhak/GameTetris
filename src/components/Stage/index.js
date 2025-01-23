@@ -295,7 +295,7 @@ const Stage = ({ lose, keyOnLeft, keyOnRight, keyOnRotate, keyOnDown, onPause,re
 					</div>
 					<div style={{display:"flex", justifyContent: "space-between", width: "100%", gap: "8px"}}>
 					<button className="down-button" onClick={keyOnDown}>speed down</button>
-					<button className="down-button" onClick={onPause}>pause</button>
+					<button className="down-button" onClick={onPause}>pause / play</button>
 					</div>
 				</div>
 
