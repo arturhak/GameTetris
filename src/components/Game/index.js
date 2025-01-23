@@ -395,7 +395,7 @@ const Game = () => {
 			hint={hintPlayer}
 			paused={pause}
 			status={{ lines, score, level }}
-			// onBlur={() => setPause(true)}
+			onBlur={() => setPause(true)}
 			onFocus={() => setPause(false)}
 			tabIndex="0"
 			onKeyUp={keyUp}

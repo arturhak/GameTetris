@@ -10,7 +10,8 @@ import Color from "color";
 
 const Game = styled.div`
 	width: 100vw;
-	height: ${props => (props.portrait ? "95" : "100")}vh;
+	//height: ${props => (props.portrait ? "95" : "100")}vh;
+	height: ${props => (props.portrait ? "100" : "100")}vh;
 	display: flex;
 	flex-direction: ${props => (props.portrait ? "column" : "row")};
 	justify-content: center;
@@ -287,12 +288,12 @@ const Stage = ({ lose, keyOnLeft, keyOnRight, keyOnRotate, keyOnDown, restartCli
 					</StyledStage>
 				)}
 				<div className="buttons-group">
-					<button className="rotate-button" onClick={keyOnRotate}>rotate</button>
-					<div>
+					<div className="position-buttons">
 						<button className="left-button" onClick={keyOnLeft}>left</button>
+						<button className="rotate-button" onClick={keyOnRotate}>rotate</button>
 						<button className="left-button" onClick={keyOnRight}>right</button>
 					</div>
-					<button className="left-button" onClick={keyOnDown}>speed down</button>
+					<button className="down-button" onClick={keyOnDown}>speed down</button>
 				</div>
 
 			</Game>

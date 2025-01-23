@@ -11,13 +11,45 @@
   display: flex;
   flex-direction: column;
   margin-top: 16px;
-  gap: 12px;
   align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  /*background: red;*/
+  width: 70%;
+  border-radius: 150px;
+  /*overflow: hidden;*/
 }
+.position-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  border-radius: 150px;
 
+}
 .left-button {
-  width: 80px;
+  width: 90px;
   height: 30px;
   margin-right: 12px;
+  border-radius: 150px;
+  border: 1px solid #1EFF;
+  background: #005397;
+  color: lightgoldenrodyellow;
 
+
+}
+.rotate-button {
+  width: 50px;
+  border-radius: 150px;
+  border: 1px solid #1EFF;
+  background: #9a031e;
+  color: lightgoldenrodyellow;
+
+}
+.down-button {
+  width: 100%;
+  padding: 6px 0;
+  border-radius: 150px;
+  border: 1px solid #1EFF;;
+  background: #005397;
+  color: lightgoldenrodyellow;
 }
