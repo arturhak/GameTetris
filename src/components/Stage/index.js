@@ -3,8 +3,13 @@ import styled from "styled-components";
 import Switch from "react-switch";
 
 import useWindowDimensions from "../../hooks/useWindowDimensions";
-import background from "../../images/background.jpg";
 import LoseGame from '../LoseGame';
+import background from "../../images/background.jpg";
+import DownIcon from "../../images/down-icon.png";
+import PlayIcon from "../../images/play-icon.png";
+import RightIcon from "../../images/right-icon.png";
+import LeftIcon from "../../images/left-icon.png";
+import RotateIcon from "../../images/rotate-icon.png";
 
 import Color from "color";
 
@@ -289,13 +294,24 @@ const Stage = ({ lose, keyOnLeft, keyOnRight, keyOnRotate, keyOnDown, onPause,re
 				)}
 				<div className="buttons-group">
 					<div className="position-buttons">
-						<button className="left-button" onClick={keyOnLeft}>left</button>
-						<button className="rotate-button" onClick={keyOnRotate}>rotate</button>
-						<button className="left-button" onClick={keyOnRight}>right</button>
+						<button className="left-button" onClick={keyOnLeft}>
+							<img src={LeftIcon} alt="icon" width={22}/>
+						</button>
+						<button className="rotate-button" onClick={keyOnRotate}>
+							<img src={RotateIcon} alt="icon" width={22}/>
+						</button>
+						<button className="left-button" onClick={keyOnRight}>
+							<img src={RightIcon} alt="icon" width={22}/>
+						</button>
 					</div>
 					<div style={{display:"flex", justifyContent: "space-between", width: "100%", gap: "8px"}}>
-					<button className="down-button" onClick={keyOnDown}>speed down</button>
-					<button className="down-button" onClick={onPause}>pause / play</button>
+					<button className="down-button" onClick={keyOnDown}>
+						<img src={DownIcon} alt="icon" width={22}/>
+					</button>
+					<button className="down-button" onClick={onPause} style={{display:"flex", alignItems:"center", justifyContent: "center"}}>
+						<img src={PlayIcon} alt="icon" width={22}/>
+						<div>||</div>
+					</button>
 					</div>
 				</div>
 
