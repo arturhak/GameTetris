@@ -153,7 +153,7 @@ const getRenderizacaoBloco = bloco => {
 	return trimBloco;
 };
 
-const Stage = ({ lose, keyOnLeft, keyOnRight, keyOnRotate, keyOnDown, restartClick, map, player, hint, status, paused, ...others }) => {
+const Stage = ({ lose, keyOnLeft, keyOnRight, keyOnRotate, keyOnDown, onPause,restartClick, map, player, hint, status, paused, ...others }) => {
 	const [pixelSize, setPixelSize] = useState(30);
 	const [portrait, setPortrait] = useState(false);
 	const { width, height } = useWindowDimensions();
@@ -293,7 +293,10 @@ const Stage = ({ lose, keyOnLeft, keyOnRight, keyOnRotate, keyOnDown, restartCli
 						<button className="rotate-button" onClick={keyOnRotate}>rotate</button>
 						<button className="left-button" onClick={keyOnRight}>right</button>
 					</div>
+					<div style={{display:"flex", justifyContent: "space-between", width: "100%", gap: "8px"}}>
 					<button className="down-button" onClick={keyOnDown}>speed down</button>
+					<button className="down-button" onClick={onPause}>pause</button>
+					</div>
 				</div>
 
 			</Game>
